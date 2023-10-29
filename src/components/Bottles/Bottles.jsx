@@ -10,12 +10,21 @@ const Bottles = () => {
         .then(res => res.json())
         .then(data => SetBottles(data))
     },[])
+
+    const handleAddToCart = bottle =>{
+        console.log("Bottle going to be added")
+    }
     return (
         <div>
             <h2>Bottles: {bottles.length}</h2>
             <div className="bottles-container">
             {
-                bottles.map(bottle => <Bottle key={bottle.id} bottle={bottle}></Bottle>)
+                bottles.map(bottle => <Bottle 
+                    key={bottle.id} 
+                    bottle={bottle}
+                    handleAddToCart={handleAddToCart}>
+
+                    </Bottle>)
             }
             </div>
             
