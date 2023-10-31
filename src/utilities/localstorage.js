@@ -11,8 +11,10 @@ const saveCartToLS = cart =>{
     localStorage.setItem("cart",cartStringField)
 }
 
-const addToLS = id=>{
+const addToLS = id =>{
     const cart = getStoredCart()
-    cart.push()
+    cart.push(id)
     saveCartToLS(cart)
 }
+
+export {addToLS}
